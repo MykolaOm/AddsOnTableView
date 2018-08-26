@@ -12,13 +12,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     let autoIdList : [Int] = [22605321,22120467,21674958,22483876,22598634,22118840,22373506,21916108,22488599,22576592]    
     @IBOutlet weak var tableView: UITableView!
+    let apiKey = "irANvvm417wSVw1hpjkeJ0mIzerpuCCvymjGVayg"
     var images : [UIImage] = []
     var imageIndex = 0
+    var flag = false {
+        didSet {
+            
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.allowsSelection = false
+        self.tableView.separatorStyle = .none
     }
-    var AddsData : [AddData] = []
+    var AddsData : [AddData] = []{
+        didSet{
+            if AddsData.count == autoIdList.count {
+                for i in 0..<AddsData.count {
+                   getImage(at: AddsData[i].imageURL )
+                }
+                flag = true
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+//            AddCell.carImage.image = self.images[indexPath.row]
+        }
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -35,20 +55,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     DispatchQueue.main.async {
                         if !self.AddsData.isEmpty, indexPath.row < self.AddsData.count{
                         AddCell.populate(with: self.AddsData[indexPath.row])
-                            AddCell.carImage.image = self.images[indexPath.row]
-                        tableView.reloadInputViews()
-                        
                         tableView.reloadInputViews()
                         }
                     }
                 
             }
+            if flag == true {
+                AddCell.carImage.image = images[indexPath.row]
+            }
             AddCell.icons.forEach({$0.backgroundColor = .red})
             if images.count > indexPath.row {
             AddCell.carImage.image = images[indexPath.row]
+                tableView.layoutSubviews()
             }
-//            tableView.layoutSubviews()
-//           tableView.reloadData()
             cell = AddCell
         }
         return cell
@@ -59,7 +78,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func requestAutoId(autoId : Int) {
-        let categiesUrl = URL(string: "https://developers.ria.com/auto/info?api_key=irANvvm417wSVw1hpjkeJ0mIzerpuCCvymjGVayg&auto_id=\(autoId)")
+        let categiesUrl = URL(string: "https://developers.ria.com/auto/info?api_key=\(apiKey)&auto_id=\(autoId)")
         URLSession.shared.dataTask(with: categiesUrl!) { (data, response, err) in
             guard let data = data else { return }
             do {

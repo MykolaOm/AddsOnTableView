@@ -14,6 +14,8 @@
 		176C33E32132A27D00F29576 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 176C33E12132A27D00F29576 /* LaunchScreen.storyboard */; };
 		176C33EB2132A4A300F29576 /* AddCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176C33EA2132A4A300F29576 /* AddCell.swift */; };
 		176C33EF2132D5B900F29576 /* AddData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176C33EE2132D5B900F29576 /* AddData.swift */; };
+		176C33F121330DAE00F29576 /* ConfigurableAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176C33F021330DAE00F29576 /* ConfigurableAdd.swift */; };
+		176C33F321331D2600F29576 /* LoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176C33F221331D2600F29576 /* LoadingAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		176C33E42132A27D00F29576 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		176C33EA2132A4A300F29576 /* AddCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCell.swift; sourceTree = "<group>"; };
 		176C33EE2132D5B900F29576 /* AddData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddData.swift; sourceTree = "<group>"; };
+		176C33F021330DAE00F29576 /* ConfigurableAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableAdd.swift; sourceTree = "<group>"; };
+		176C33F221331D2600F29576 /* LoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				176C33E42132A27D00F29576 /* Info.plist */,
 				176C33EA2132A4A300F29576 /* AddCell.swift */,
 				176C33EE2132D5B900F29576 /* AddData.swift */,
+				176C33F021330DAE00F29576 /* ConfigurableAdd.swift */,
+				176C33F221331D2600F29576 /* LoadingAnimation.swift */,
 			);
 			path = testApp;
 			sourceTree = "<group>";
@@ -144,7 +150,9 @@
 				176C33EB2132A4A300F29576 /* AddCell.swift in Sources */,
 				176C33EF2132D5B900F29576 /* AddData.swift in Sources */,
 				176C33DB2132A26E00F29576 /* ViewController.swift in Sources */,
+				176C33F321331D2600F29576 /* LoadingAnimation.swift in Sources */,
 				176C33D92132A26E00F29576 /* AppDelegate.swift in Sources */,
+				176C33F121330DAE00F29576 /* ConfigurableAdd.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
