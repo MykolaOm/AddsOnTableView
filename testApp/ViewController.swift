@@ -10,7 +10,26 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let autoIdList : [Int] = [22605321,22120467,21674958,22483876,22598634,22118840,22373506,21916108,22488599,22576592]    
+    @IBAction func ChangeCategory(_ sender: UIBarButtonItem) {
+        let sheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let action1 = UIAlertAction(title: "My Action 1", style: .default) { (action) in
+            print("THIS IS ACTION 1")
+        }
+        let action2 = UIAlertAction(title: "My Action 2", style: .cancel, handler: nil)
+        let action3 = UIAlertAction(title: "BAD STUFF", style: .destructive) { (_) in
+            print("YOU HAVE DELETED YOUR ACCOUNT")
+        }
+        sheet.addAction(action3)
+        sheet.addAction(action1)
+        sheet.addAction(action2)
+        present(sheet, animated: true, completion: nil)
+        
+    
+        
+    }
+    let autoIdList = [[22605321,22120467,21674958,22483876,22598634,22118840,22373506,21916108,22488599,22576592]]
+    var Category = 0
+    
     @IBOutlet weak var tableView: UITableView!
     let apiKey = "irANvvm417wSVw1hpjkeJ0mIzerpuCCvymjGVayg"
     var images : [UIImage] = []
@@ -27,7 +46,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     var AddsData : [AddData] = []{
         didSet{
-            if AddsData.count == autoIdList.count {
+            if AddsData.count == autoIdList[Category].count {
                 for i in 0..<AddsData.count {
                    getImage(at: AddsData[i].imageURL )
                 }
@@ -44,13 +63,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return autoIdList.count
+        return autoIdList[Category].count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
         if let AddCell = tableView.dequeueReusableCell(withIdentifier: "AddCell") as? AddCell {
             DispatchQueue.global().async {
-                self.requestAutoId(autoId: self.autoIdList[indexPath.row])
+                self.requestAutoId(autoId: self.autoIdList[self.Category][indexPath.row])
                 
                     DispatchQueue.main.async {
                         if !self.AddsData.isEmpty, indexPath.row < self.AddsData.count{
@@ -84,7 +103,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             do {
                 guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else { return }
                 let carAddInfo = AddData(json: json)
-                if self.AddsData.count < self.autoIdList.count {self.AddsData.append(carAddInfo)}
+                if self.AddsData.count < self.autoIdList[self.Category].count {self.AddsData.append(carAddInfo)}
             } catch let jsonErr {
                 print("Error serializing json:", jsonErr)
             }

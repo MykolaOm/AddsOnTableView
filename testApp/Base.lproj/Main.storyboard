@@ -251,7 +251,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="AK2-WV-khU"/>
+                    <navigationItem key="navigationItem" id="AK2-WV-khU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="d5V-2S-aLp">
+                            <connections>
+                                <action selector="ChangeCategory:" destination="BYZ-38-t0r" id="mRF-zo-ThO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="F4I-bP-MkD" id="Pze-Lt-YWU"/>
                     </connections>
