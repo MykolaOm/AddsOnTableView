@@ -39,15 +39,27 @@ class AddCell: UITableViewCell,Configurable {
         let prcD = setprice(input: String(add.USD))
         self.priceD.text = "\(prcD) $"
         self.priceD.textColor = .green
-        self.mileage.text = add.race
-        self.transmission.text = add.gearboxName
-        self.engineCapacity.text = add.engineCapacity
-        self.city.text = add.locationCityName
+        self.mileage.text = " " + add.race
+        self.transmission.text = " " + add.gearboxName
+        self.engineCapacity.text = " " + add.engineCapacity
+        self.city.text = " " + add.locationCityName
         let date = String(add.addDate.dropLast(8))
-        self.addDate.text = setDate(str: date)
+        self.addDate.text = " " + setDate(str: date)
         self.addDate.alpha = 0.7
     }
-
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        title.text?.removeAll()
+        priceU.text?.removeAll()
+        priceD.text?.removeAll()
+        mileage.text?.removeAll()
+        engineCapacity.text?.removeAll()
+        city.text?.removeAll()
+        transmission.text?.removeAll()
+        addDate.text?.removeAll()
+        carImage.image = nil
+    }
+    
     private func setprice(input: String) -> String {
         var newString = input
         if input.count > 3 {

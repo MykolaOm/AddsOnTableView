@@ -16,6 +16,8 @@
 		176C33EF2132D5B900F29576 /* AddData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176C33EE2132D5B900F29576 /* AddData.swift */; };
 		176C33F121330DAE00F29576 /* ConfigurableAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176C33F021330DAE00F29576 /* ConfigurableAdd.swift */; };
 		176C33F321331D2600F29576 /* LoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176C33F221331D2600F29576 /* LoadingAnimation.swift */; };
+		176C34152133351000F29576 /* VehicleCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176C34142133351000F29576 /* VehicleCategory.swift */; };
+		176C341721334AF600F29576 /* AddListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176C341621334AF600F29576 /* AddListDataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		176C33EE2132D5B900F29576 /* AddData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddData.swift; sourceTree = "<group>"; };
 		176C33F021330DAE00F29576 /* ConfigurableAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableAdd.swift; sourceTree = "<group>"; };
 		176C33F221331D2600F29576 /* LoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimation.swift; sourceTree = "<group>"; };
+		176C34142133351000F29576 /* VehicleCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleCategory.swift; sourceTree = "<group>"; };
+		176C341621334AF600F29576 /* AddListDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddListDataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,18 +66,68 @@
 		176C33D72132A26E00F29576 /* testApp */ = {
 			isa = PBXGroup;
 			children = (
-				176C33D82132A26E00F29576 /* AppDelegate.swift */,
-				176C33DA2132A26E00F29576 /* ViewController.swift */,
-				176C33DC2132A26E00F29576 /* Main.storyboard */,
+				176C341921335E1800F29576 /* SupportingFiles */,
+				176C341C21335EB400F29576 /* Controllers */,
+				176C341D21335EC800F29576 /* Views */,
 				176C33DF2132A27D00F29576 /* Assets.xcassets */,
-				176C33E12132A27D00F29576 /* LaunchScreen.storyboard */,
 				176C33E42132A27D00F29576 /* Info.plist */,
-				176C33EA2132A4A300F29576 /* AddCell.swift */,
-				176C33EE2132D5B900F29576 /* AddData.swift */,
-				176C33F021330DAE00F29576 /* ConfigurableAdd.swift */,
-				176C33F221331D2600F29576 /* LoadingAnimation.swift */,
+				176C341A21335E7A00F29576 /* Models */,
+				176C341B21335E9D00F29576 /* Protocols */,
+				176C341821335E0700F29576 /* DataProviders */,
 			);
 			path = testApp;
+			sourceTree = "<group>";
+		};
+		176C341821335E0700F29576 /* DataProviders */ = {
+			isa = PBXGroup;
+			children = (
+				176C34142133351000F29576 /* VehicleCategory.swift */,
+				176C341621334AF600F29576 /* AddListDataProvider.swift */,
+			);
+			path = DataProviders;
+			sourceTree = "<group>";
+		};
+		176C341921335E1800F29576 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				176C33D82132A26E00F29576 /* AppDelegate.swift */,
+				176C33F221331D2600F29576 /* LoadingAnimation.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		176C341A21335E7A00F29576 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				176C33EE2132D5B900F29576 /* AddData.swift */,
+				176C33EA2132A4A300F29576 /* AddCell.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		176C341B21335E9D00F29576 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				176C33F021330DAE00F29576 /* ConfigurableAdd.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		176C341C21335EB400F29576 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				176C33DA2132A26E00F29576 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		176C341D21335EC800F29576 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				176C33DC2132A26E00F29576 /* Main.storyboard */,
+				176C33E12132A27D00F29576 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +206,8 @@
 				176C33DB2132A26E00F29576 /* ViewController.swift in Sources */,
 				176C33F321331D2600F29576 /* LoadingAnimation.swift in Sources */,
 				176C33D92132A26E00F29576 /* AppDelegate.swift in Sources */,
+				176C34152133351000F29576 /* VehicleCategory.swift in Sources */,
+				176C341721334AF600F29576 /* AddListDataProvider.swift in Sources */,
 				176C33F121330DAE00F29576 /* ConfigurableAdd.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
