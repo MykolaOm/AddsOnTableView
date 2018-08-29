@@ -18,6 +18,7 @@
 		176C33F321331D2600F29576 /* LoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176C33F221331D2600F29576 /* LoadingAnimation.swift */; };
 		176C34152133351000F29576 /* VehicleCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176C34142133351000F29576 /* VehicleCategory.swift */; };
 		176C341721334AF600F29576 /* AddListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176C341621334AF600F29576 /* AddListDataProvider.swift */; };
+		17807FDC2137253400A8FE94 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17807FDB2137253400A8FE94 /* CategoryVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		176C33F221331D2600F29576 /* LoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimation.swift; sourceTree = "<group>"; };
 		176C34142133351000F29576 /* VehicleCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleCategory.swift; sourceTree = "<group>"; };
 		176C341621334AF600F29576 /* AddListDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddListDataProvider.swift; sourceTree = "<group>"; };
+		17807FDB2137253400A8FE94 /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				176C33DA2132A26E00F29576 /* ViewController.swift */,
+				17807FDB2137253400A8FE94 /* CategoryVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				176C33EB2132A4A300F29576 /* AddCell.swift in Sources */,
 				176C33EF2132D5B900F29576 /* AddData.swift in Sources */,
 				176C33DB2132A26E00F29576 /* ViewController.swift in Sources */,
+				17807FDC2137253400A8FE94 /* CategoryVC.swift in Sources */,
 				176C33F321331D2600F29576 /* LoadingAnimation.swift in Sources */,
 				176C33D92132A26E00F29576 /* AppDelegate.swift in Sources */,
 				176C34152133351000F29576 /* VehicleCategory.swift in Sources */,
