@@ -13,8 +13,12 @@ struct VehicleCategory: Decodable {
     let value : Int?
 }
 class VehicleCategoryProvider {
-    
-    var vehicleCategories = [VehicleCategory]()
+    var delegate : CategoryDownloaderDelegate?
+    var vehicleCategories = [VehicleCategory]() {
+        didSet{
+            delegate?.didFinishDownloading(self)
+        }
+    }
     
     private func readJsonFromRequest(apiKey: String) {
         let categiesUrl = URL(string: "https://developers.ria.com/auto/categories/?api_key=\(apiKey)")
