@@ -13,22 +13,24 @@ class CategoryVC: UIViewController, CategoryDownloaderDelegate {
     func didFinishDownloading(_ sender: VehicleCategoryProvider) {
         DispatchQueue.main.async {
             self.buttonFactory(amount: self.vcp.vehicleCategories )
+            self.actView?.removeFromSuperview()
         }
-        
     }
+    
     let vcp = VehicleCategoryProvider()
     let apiKey = "irANvvm417wSVw1hpjkeJ0mIzerpuCCvymjGVayg"
-    let actView = UIActivityIndicatorView()
+    var actView : UIActivityIndicatorView?
 
     var stv : UIStackView?
     override func viewDidLoad() {
         super.viewDidLoad()
         vcp.delegate = self
-        let actView = UIActivityIndicatorView()
-        self.view.addSubview(actView)
-        actView.startAnimating()
+        actView = UIActivityIndicatorView(frame: self.view.frame)
+        actView?.color = .red
+        self.view.addSubview(actView!)
+        actView?.startAnimating()
         vcp.getData(apiKey: apiKey)
-        setButtonStack()      
+        setButtonStack()
     }
     func buttonFactory(amount : [VehicleCategory] ) { //, completion : @escaping (Int)->Void
         print(amount.count)
@@ -36,24 +38,26 @@ class CategoryVC: UIViewController, CategoryDownloaderDelegate {
             let button = UIButton()
             button.setTitle(amount[i].name, for: .normal)
             button.tag = amount[i].value!
-            button.backgroundColor = .red
-//            button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+            button.setTitleColor(.blue, for: .normal)
+//            button.backgroundColor = .red
+            button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
             stv?.addArrangedSubview(button)
         }
     }
-    private func buttonAction(sender: UIButton!) {
-        let btnsendtag: UIButton = sender
-        if btnsendtag.tag == 1 {
-           // let vc = ViewController()
-            //vc
-          self.navigationController?.pushViewController(ViewController(), animated: true)
-        }
+    @objc private func buttonAction(sender: UIButton!) {
+//        let btnsendtag: UIButton = sender
+//        if btnsendtag.tag == 1 {
+//           // let vc = ViewController()
+//            //vc
+//          self.navigationController?.pushViewController(ViewController(), animated: true)
+//        }
+        print(sender.tag)
     }
     private func setButtonStack(){
         stv = UIStackView()
         stv?.translatesAutoresizingMaskIntoConstraints = false
         stv?.center = self.view.center
-        stv?.backgroundColor = .yellow
+//        stv?.backgroundColor = .yellow
         stv?.axis = .vertical
         stv?.distribution = .fillEqually
         self.view.addSubview(stv!)
