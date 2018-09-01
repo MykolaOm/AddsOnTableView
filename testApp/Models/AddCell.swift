@@ -24,7 +24,7 @@ class AddCell: UITableViewCell,Configurable {
     @IBOutlet weak var carImage: UIImageView! {
         didSet{
             if aV != nil{
-                aV?.removeFromSuperview()
+                aV?.stopAnimating()
             }
         }
     }
