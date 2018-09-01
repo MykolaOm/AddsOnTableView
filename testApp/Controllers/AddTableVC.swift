@@ -15,6 +15,16 @@ class AddTableVC: UITableViewController, AddListDataProviderDelegate, ErrorDeleg
             self.tableView.reloadData()
         }
     }
+    lazy var refresh : UIRefreshControl = {
+        let refreshcontrol = UIRefreshControl()
+        refreshcontrol.tintColor = .blue
+        refreshcontrol.addTarget(self, action: #selector(reload), for: .valueChanged )
+        return refreshcontrol
+    }()
+    @objc private func reload(){
+        tableView.reloadData()
+        refresh.endRefreshing()
+    }
     var errorCell = false
     
     func didFinish(_ sender: AddListDataProvider){
@@ -39,8 +49,10 @@ class AddTableVC: UITableViewController, AddListDataProviderDelegate, ErrorDeleg
     var images = Array(repeating: UIImage(), count: 10)
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNeedsStatusBarAppearanceUpdate()
         let cellNib = UINib(nibName: "AddCell", bundle: nil)
         self.tableView.register(cellNib, forCellReuseIdentifier: "AddCell")
+        tableView.refreshControl = refresh
         addListDataProvider = AddListDataProvider()
         addListDataProvider?.delegate = self
         addListDataProvider?.errorDelegate = self
@@ -48,7 +60,9 @@ class AddTableVC: UITableViewController, AddListDataProviderDelegate, ErrorDeleg
         tableView.allowsSelection = false
         self.tableView.separatorStyle = .none
     }
-
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -58,7 +72,11 @@ class AddTableVC: UITableViewController, AddListDataProviderDelegate, ErrorDeleg
         return numRows
     }
      override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-           var height = tableView.frame.height < tableView.frame.width ? tableView.frame.height : (tableView.frame.height / 2)
+        let tVW = self.tableView.frame.width
+        var tVH = self.tableView.frame.height
+        if let barH = self.navigationController?.navigationBar.frame.height
+        {  tVH -= barH  }
+        var height = Int(tVH) < Int(tVW) ? tVH : tVH / 2
         if errorCell { height = 20}
             return height
         }
@@ -75,11 +93,10 @@ class AddTableVC: UITableViewController, AddListDataProviderDelegate, ErrorDeleg
                         let image = self.getImage(at: (self.addsData[indexPath.row].imageURL))
                         DispatchQueue.main.async {
                             AddCell.carImage.image = image
-                            self.images[indexPath.row] = image
+//                            self.images[indexPath.row] = image
                         }
                     }
                     cell = AddCell
-                    tableView.layoutSubviews()
                     }
                 }
             }

@@ -21,7 +21,13 @@ class AddCell: UITableViewCell,Configurable {
     var aV : UIActivityIndicatorView?
     @IBOutlet var icons: [UIImageView]!
     
-    @IBOutlet weak var carImage: UIImageView!
+    @IBOutlet weak var carImage: UIImageView! {
+        didSet{
+            if aV != nil{
+                aV?.removeFromSuperview()
+            }
+        }
+    }
     let identifier = "AddCell"
     
     override func awakeFromNib() {
@@ -58,6 +64,8 @@ class AddCell: UITableViewCell,Configurable {
         transmission.text?.removeAll()
         addDate.text?.removeAll()
         carImage.image = nil
+        aV = nil
+        icons = nil
     }
     
     private func setprice(input: String) -> String {
