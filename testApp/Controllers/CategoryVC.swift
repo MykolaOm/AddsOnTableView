@@ -46,6 +46,7 @@ class CategoryVC: UIViewController, CategoryDownloaderDelegate {
           let vc = AddTableVC()
           vc.category = sender.tag
           vc.apiKey  = self.apiKey
+          vc.errorCell = false
           self.navigationController?.pushViewController(vc, animated: true)
     }
     private func setButtonStack(){

@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct AddData: Decodable {
+struct AddData: Decodable, Hashable {
     let locationCityName: String
     let USD : Int
     let UAH : Int

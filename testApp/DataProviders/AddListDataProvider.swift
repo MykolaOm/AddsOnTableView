@@ -12,7 +12,9 @@ class AddListDataProvider {
     var delegate: AddListDataProviderDelegate?
     var advertIdList : [Int] = [] {
         didSet{
-            self.delegate?.didFinish(self)
+            if advertIdList.count == AdvertIds.count{
+                self.delegate?.didFinish(self)
+            }
         }
     }
     var AdvertIds = Set<Int>()

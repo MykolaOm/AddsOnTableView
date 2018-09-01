@@ -11,7 +11,6 @@ import UIKit
 class AddTableVC: UITableViewController, AddListDataProviderDelegate, ErrorDelegate{
     func showError() {
         errorCell = true
-        print("Set error to :", errorCell)
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -19,18 +18,20 @@ class AddTableVC: UITableViewController, AddListDataProviderDelegate, ErrorDeleg
     var errorCell = false
     
     func didFinish(_ sender: AddListDataProvider){
-        print("datarecieved")
         getData()
     }
     var numberOfSections = 0
     var addListDataProvider : AddListDataProvider?
     var category = 1
     var apiKey : String?
-    var addsData = [AddData](){
+
+    var addsData = [AddData]()
+    {
         didSet{
-            errorCell = false
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
+            if addsData.count == addListDataProvider?.advertIdList.count{
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             }
         }
     }
@@ -63,24 +64,22 @@ class AddTableVC: UITableViewController, AddListDataProviderDelegate, ErrorDeleg
         }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
-        print("What: ", errorCell )
         if errorCell {
-            print("errorCell")
             cell.textLabel?.text = "connection error"
         } else {
             if !addsData.isEmpty {
                 if let AddCell = tableView.dequeueReusableCell(withIdentifier: "AddCell") as? AddCell {
                     if addsData.count > indexPath.row {
-                    AddCell.populate(with: self.addsData[indexPath.row])
+                        AddCell.populate(with: self.addsData[indexPath.row])
                     DispatchQueue.global().async {
-                       let image = self.getImage(at: self.addsData[indexPath.row].imageURL)
+                        let image = self.getImage(at: (self.addsData[indexPath.row].imageURL))
                         DispatchQueue.main.async {
                             AddCell.carImage.image = image
                             self.images[indexPath.row] = image
                         }
                     }
                     cell = AddCell
-                    tableView.reloadInputViews()
+                    tableView.layoutSubviews()
                     }
                 }
             }
