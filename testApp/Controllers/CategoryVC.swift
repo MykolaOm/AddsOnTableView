@@ -24,6 +24,7 @@ class CategoryVC: UIViewController, CategoryDownloaderDelegate {
     var stv : UIStackView?
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title  = "Выбор категории"
         vcp.delegate = self
         actView = UIActivityIndicatorView(frame: self.view.frame)
         actView?.color = .red
@@ -47,6 +48,7 @@ class CategoryVC: UIViewController, CategoryDownloaderDelegate {
           vc.category = sender.tag
           vc.apiKey  = self.apiKey
           vc.errorCell = false
+          vc.categoryName = self.vcp.vehicleCategories[sender.tag-1].name
           self.navigationController?.pushViewController(vc, animated: true)
     }
     private func setButtonStack(){

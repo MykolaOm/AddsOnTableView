@@ -19,7 +19,6 @@ class VehicleCategoryProvider {
             delegate?.didFinishDownloading(self)
         }
     }
-    
     private func readJsonFromRequest(apiKey: String) {
         let categiesUrl = URL(string: "https://developers.ria.com/auto/categories/?api_key=\(apiKey)")
         URLSession.shared.dataTask(with: categiesUrl!) { (data, response, err) in

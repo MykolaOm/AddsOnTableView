@@ -21,12 +21,8 @@ class AddCell: UITableViewCell,Configurable {
     var aV : UIActivityIndicatorView?
     @IBOutlet var icons: [UIImageView]!
     
-    @IBOutlet weak var carImage: UIImageView! {
-        didSet{
-            if aV != nil{
-                aV?.stopAnimating()
-            }
-        }
+    @IBOutlet weak var carImage: UIImageView!{
+        didSet{ aV?.stopAnimating() }
     }
     let identifier = "AddCell"
     

@@ -34,10 +34,9 @@ class AddTableVC: UITableViewController, AddListDataProviderDelegate, ErrorDeleg
     var addListDataProvider : AddListDataProvider?
     var category = 1
     var apiKey : String?
-
-    var addsData = [AddData]()
-    {
-        didSet{
+    var categoryName: String?
+    var addsData = [AddData]() {
+        didSet {
             if addsData.count == addListDataProvider?.advertIdList.count{
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -49,6 +48,7 @@ class AddTableVC: UITableViewController, AddListDataProviderDelegate, ErrorDeleg
     var images = Array(repeating: UIImage(), count: 10)
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = categoryName
         setNeedsStatusBarAppearanceUpdate()
         let cellNib = UINib(nibName: "AddCell", bundle: nil)
         self.tableView.register(cellNib, forCellReuseIdentifier: "AddCell")
@@ -93,7 +93,6 @@ class AddTableVC: UITableViewController, AddListDataProviderDelegate, ErrorDeleg
                         let image = self.getImage(at: (self.addsData[indexPath.row].imageURL))
                         DispatchQueue.main.async {
                             AddCell.carImage.image = image
-//                            self.images[indexPath.row] = image
                         }
                     }
                     cell = AddCell

@@ -26,8 +26,6 @@ class AddListDataProvider {
             var responceCode = 0
             if let httpResponse = response as? HTTPURLResponse {
                 responceCode = Int(httpResponse.statusCode)
-                print(responceCode)
-                print(type(of: responceCode))
             }
             if responceCode == 200 {
                 guard let data = data else { return }
