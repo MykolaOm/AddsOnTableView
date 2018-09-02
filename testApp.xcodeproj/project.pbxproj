@@ -11,6 +11,9 @@
 		173D145F213A9220004E72D0 /* AddTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173D145E213A9220004E72D0 /* AddTableVC.swift */; };
 		173D1461213A934C004E72D0 /* AddListDataProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173D1460213A934C004E72D0 /* AddListDataProviderDelegate.swift */; };
 		173D1465213AC515004E72D0 /* ErrorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173D1464213AC515004E72D0 /* ErrorDelegate.swift */; };
+		175928EF213BDD4A00A869DF /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175928EE213BDD4A00A869DF /* MapVC.swift */; };
+		176205F3213C81BB00E8A728 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176205F2213C81BB00E8A728 /* City.swift */; };
+		176205F5213C857100E8A728 /* CityInfoDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176205F4213C857100E8A728 /* CityInfoDataProvider.swift */; };
 		176C33D92132A26E00F29576 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176C33D82132A26E00F29576 /* AppDelegate.swift */; };
 		176C33E02132A27D00F29576 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 176C33DF2132A27D00F29576 /* Assets.xcassets */; };
 		176C33E32132A27D00F29576 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 176C33E12132A27D00F29576 /* LaunchScreen.storyboard */; };
@@ -29,6 +32,9 @@
 		173D145E213A9220004E72D0 /* AddTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTableVC.swift; sourceTree = "<group>"; };
 		173D1460213A934C004E72D0 /* AddListDataProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListDataProviderDelegate.swift; sourceTree = "<group>"; };
 		173D1464213AC515004E72D0 /* ErrorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDelegate.swift; sourceTree = "<group>"; };
+		175928EE213BDD4A00A869DF /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		176205F2213C81BB00E8A728 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		176205F4213C857100E8A728 /* CityInfoDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfoDataProvider.swift; sourceTree = "<group>"; };
 		176C33D52132A26E00F29576 /* testApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		176C33D82132A26E00F29576 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		176C33DF2132A27D00F29576 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,6 +97,7 @@
 			children = (
 				176C34142133351000F29576 /* VehicleCategory.swift */,
 				176C341621334AF600F29576 /* AddListDataProvider.swift */,
+				176205F4213C857100E8A728 /* CityInfoDataProvider.swift */,
 			);
 			path = DataProviders;
 			sourceTree = "<group>";
@@ -110,6 +117,7 @@
 				176C33EE2132D5B900F29576 /* AddData.swift */,
 				176C33EA2132A4A300F29576 /* AddCell.swift */,
 				173D145B213A8CAC004E72D0 /* AddCell.xib */,
+				176205F2213C81BB00E8A728 /* City.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -130,6 +138,7 @@
 			children = (
 				17807FDB2137253400A8FE94 /* CategoryVC.swift */,
 				173D145E213A9220004E72D0 /* AddTableVC.swift */,
+				175928EE213BDD4A00A869DF /* MapVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -215,15 +224,18 @@
 			files = (
 				179DD1A02138A2520063B874 /* CategoryDownloaderDelegate.swift in Sources */,
 				176C33EB2132A4A300F29576 /* AddCell.swift in Sources */,
+				175928EF213BDD4A00A869DF /* MapVC.swift in Sources */,
 				176C33EF2132D5B900F29576 /* AddData.swift in Sources */,
 				173D145F213A9220004E72D0 /* AddTableVC.swift in Sources */,
 				17807FDC2137253400A8FE94 /* CategoryVC.swift in Sources */,
+				176205F3213C81BB00E8A728 /* City.swift in Sources */,
 				176C33F321331D2600F29576 /* LoadingAnimation.swift in Sources */,
 				173D1461213A934C004E72D0 /* AddListDataProviderDelegate.swift in Sources */,
 				176C33D92132A26E00F29576 /* AppDelegate.swift in Sources */,
 				176C34152133351000F29576 /* VehicleCategory.swift in Sources */,
 				176C341721334AF600F29576 /* AddListDataProvider.swift in Sources */,
 				176C33F121330DAE00F29576 /* ConfigurableAdd.swift in Sources */,
+				176205F5213C857100E8A728 /* CityInfoDataProvider.swift in Sources */,
 				173D1465213AC515004E72D0 /* ErrorDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

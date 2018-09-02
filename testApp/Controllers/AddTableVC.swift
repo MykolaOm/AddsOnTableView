@@ -84,19 +84,17 @@ class AddTableVC: UITableViewController, AddListDataProviderDelegate, ErrorDeleg
         var cell = UITableViewCell()
         if errorCell {
             cell.textLabel?.text = "connection error"
-        } else {
-            if !addsData.isEmpty {
-                if let AddCell = tableView.dequeueReusableCell(withIdentifier: "AddCell") as? AddCell {
-                    if addsData.count > indexPath.row {
-                        AddCell.populate(with: self.addsData[indexPath.row])
-                    DispatchQueue.global().async {
-                        let image = self.getImage(at: (self.addsData[indexPath.row].imageURL))
-                        DispatchQueue.main.async {
-                            AddCell.carImage.image = image
-                        }
+        } else if !addsData.isEmpty {
+            if let AddCell = tableView.dequeueReusableCell(withIdentifier: "AddCell") as? AddCell {
+                if addsData.count > indexPath.row {
+                    AddCell.populate(with: self.addsData[indexPath.row])
+                DispatchQueue.global().async {
+                    let image = self.getImage(at: (self.addsData[indexPath.row].imageURL))
+                    DispatchQueue.main.async {
+                        AddCell.setImage(image:image)
                     }
-                    cell = AddCell
-                    }
+                }
+                cell = AddCell
                 }
             }
         }

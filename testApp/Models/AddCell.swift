@@ -21,9 +21,7 @@ class AddCell: UITableViewCell,Configurable {
     var aV : UIActivityIndicatorView?
     @IBOutlet var icons: [UIImageView]!
     
-    @IBOutlet weak var carImage: UIImageView!{
-        didSet{ aV?.stopAnimating() }
-    }
+    @IBOutlet weak var carImage: UIImageView!
     let identifier = "AddCell"
     
     override func awakeFromNib() {
@@ -63,7 +61,10 @@ class AddCell: UITableViewCell,Configurable {
         aV = nil
         icons = nil
     }
-    
+    func setImage(image:UIImage){
+        carImage.image = image
+        aV?.stopAnimating()
+    }
     private func setprice(input: String) -> String {
         var newString = input
         if input.count > 3 {
