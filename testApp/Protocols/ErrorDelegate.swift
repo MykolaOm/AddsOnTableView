@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ErrorDelegate {
-    func showError()
+    func showError(type :httpError)
 }

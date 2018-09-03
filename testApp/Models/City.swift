@@ -12,7 +12,7 @@ struct City {
     let name : String
     let latitude : Double
     let longitude : Double
-    /** let geoApiKey = z08sxTeQAddYWAMRAMFHkwsFv2cepIEl */
+    /** let geoApiKey =  */
     /**http://open.mapquestapi.com/geocoding/v1/address?key=\(geoApi)&location=Vinnitsia*/
     init(json: [String: Any]){
         let r = json["result"] as? [Int: Any]

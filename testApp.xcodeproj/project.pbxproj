@@ -14,6 +14,11 @@
 		175928EF213BDD4A00A869DF /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175928EE213BDD4A00A869DF /* MapVC.swift */; };
 		176205F3213C81BB00E8A728 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176205F2213C81BB00E8A728 /* City.swift */; };
 		176205F5213C857100E8A728 /* CityInfoDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176205F4213C857100E8A728 /* CityInfoDataProvider.swift */; };
+		1769C4BD213DB72F00B43B88 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1769C4BC213DB72F00B43B88 /* UIViewExtensions.swift */; };
+		1769C4BF213DB78B00B43B88 /* MapVCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1769C4BE213DB78B00B43B88 /* MapVCExtensions.swift */; };
+		1769C4C3213DB85800B43B88 /* ConnettionErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1769C4C2213DB85800B43B88 /* ConnettionErrors.swift */; };
+		1769C4C6213DB9A300B43B88 /* ApiAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1769C4C5213DB9A300B43B88 /* ApiAccess.swift */; };
+		1769C4C8213DC09100B43B88 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1769C4C7213DC09100B43B88 /* Reachability.swift */; };
 		176C33D92132A26E00F29576 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176C33D82132A26E00F29576 /* AppDelegate.swift */; };
 		176C33E02132A27D00F29576 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 176C33DF2132A27D00F29576 /* Assets.xcassets */; };
 		176C33E32132A27D00F29576 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 176C33E12132A27D00F29576 /* LaunchScreen.storyboard */; };
@@ -21,7 +26,7 @@
 		176C33EF2132D5B900F29576 /* AddData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176C33EE2132D5B900F29576 /* AddData.swift */; };
 		176C33F121330DAE00F29576 /* ConfigurableAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176C33F021330DAE00F29576 /* ConfigurableAdd.swift */; };
 		176C33F321331D2600F29576 /* LoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176C33F221331D2600F29576 /* LoadingAnimation.swift */; };
-		176C34152133351000F29576 /* VehicleCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176C34142133351000F29576 /* VehicleCategory.swift */; };
+		176C34152133351000F29576 /* VehicleCategoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176C34142133351000F29576 /* VehicleCategoryProvider.swift */; };
 		176C341721334AF600F29576 /* AddListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176C341621334AF600F29576 /* AddListDataProvider.swift */; };
 		17807FDC2137253400A8FE94 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17807FDB2137253400A8FE94 /* CategoryVC.swift */; };
 		179DD1A02138A2520063B874 /* CategoryDownloaderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179DD19F2138A2520063B874 /* CategoryDownloaderDelegate.swift */; };
@@ -35,6 +40,11 @@
 		175928EE213BDD4A00A869DF /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		176205F2213C81BB00E8A728 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		176205F4213C857100E8A728 /* CityInfoDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfoDataProvider.swift; sourceTree = "<group>"; };
+		1769C4BC213DB72F00B43B88 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		1769C4BE213DB78B00B43B88 /* MapVCExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVCExtensions.swift; sourceTree = "<group>"; };
+		1769C4C2213DB85800B43B88 /* ConnettionErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnettionErrors.swift; sourceTree = "<group>"; };
+		1769C4C5213DB9A300B43B88 /* ApiAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAccess.swift; sourceTree = "<group>"; };
+		1769C4C7213DC09100B43B88 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		176C33D52132A26E00F29576 /* testApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		176C33D82132A26E00F29576 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		176C33DF2132A27D00F29576 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,7 +54,7 @@
 		176C33EE2132D5B900F29576 /* AddData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddData.swift; sourceTree = "<group>"; };
 		176C33F021330DAE00F29576 /* ConfigurableAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableAdd.swift; sourceTree = "<group>"; };
 		176C33F221331D2600F29576 /* LoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimation.swift; sourceTree = "<group>"; };
-		176C34142133351000F29576 /* VehicleCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleCategory.swift; sourceTree = "<group>"; };
+		176C34142133351000F29576 /* VehicleCategoryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleCategoryProvider.swift; sourceTree = "<group>"; };
 		176C341621334AF600F29576 /* AddListDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddListDataProvider.swift; sourceTree = "<group>"; };
 		17807FDB2137253400A8FE94 /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
 		179DD19F2138A2520063B874 /* CategoryDownloaderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDownloaderDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +71,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1769C4BA213DB6E100B43B88 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1769C4C1213DB7E400B43B88 /* forBaseClasses */,
+				1769C4C0213DB7D100B43B88 /* forCustomClasses */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1769C4BB213DB6EE00B43B88 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				1769C4C2213DB85800B43B88 /* ConnettionErrors.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		1769C4C0213DB7D100B43B88 /* forCustomClasses */ = {
+			isa = PBXGroup;
+			children = (
+				1769C4BE213DB78B00B43B88 /* MapVCExtensions.swift */,
+			);
+			path = forCustomClasses;
+			sourceTree = "<group>";
+		};
+		1769C4C1213DB7E400B43B88 /* forBaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				1769C4BC213DB72F00B43B88 /* UIViewExtensions.swift */,
+			);
+			path = forBaseClasses;
+			sourceTree = "<group>";
+		};
+		1769C4C4213DB96000B43B88 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				1769C4C5213DB9A300B43B88 /* ApiAccess.swift */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
 		176C33CC2132A26E00F29576 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +131,9 @@
 		176C33D72132A26E00F29576 /* testApp */ = {
 			isa = PBXGroup;
 			children = (
+				1769C4C4213DB96000B43B88 /* Configs */,
+				1769C4BB213DB6EE00B43B88 /* Enums */,
+				1769C4BA213DB6E100B43B88 /* Extensions */,
 				176C341921335E1800F29576 /* SupportingFiles */,
 				176C341C21335EB400F29576 /* Controllers */,
 				176C341D21335EC800F29576 /* Views */,
@@ -95,7 +149,7 @@
 		176C341821335E0700F29576 /* DataProviders */ = {
 			isa = PBXGroup;
 			children = (
-				176C34142133351000F29576 /* VehicleCategory.swift */,
+				176C34142133351000F29576 /* VehicleCategoryProvider.swift */,
 				176C341621334AF600F29576 /* AddListDataProvider.swift */,
 				176205F4213C857100E8A728 /* CityInfoDataProvider.swift */,
 			);
@@ -106,7 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				176C33D82132A26E00F29576 /* AppDelegate.swift */,
-				176C33F221331D2600F29576 /* LoadingAnimation.swift */,
+				1769C4C7213DC09100B43B88 /* Reachability.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -146,6 +200,7 @@
 		176C341D21335EC800F29576 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				176C33F221331D2600F29576 /* LoadingAnimation.swift */,
 				176C33E12132A27D00F29576 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
@@ -225,17 +280,22 @@
 				179DD1A02138A2520063B874 /* CategoryDownloaderDelegate.swift in Sources */,
 				176C33EB2132A4A300F29576 /* AddCell.swift in Sources */,
 				175928EF213BDD4A00A869DF /* MapVC.swift in Sources */,
+				1769C4BF213DB78B00B43B88 /* MapVCExtensions.swift in Sources */,
 				176C33EF2132D5B900F29576 /* AddData.swift in Sources */,
 				173D145F213A9220004E72D0 /* AddTableVC.swift in Sources */,
 				17807FDC2137253400A8FE94 /* CategoryVC.swift in Sources */,
+				1769C4C3213DB85800B43B88 /* ConnettionErrors.swift in Sources */,
 				176205F3213C81BB00E8A728 /* City.swift in Sources */,
 				176C33F321331D2600F29576 /* LoadingAnimation.swift in Sources */,
 				173D1461213A934C004E72D0 /* AddListDataProviderDelegate.swift in Sources */,
 				176C33D92132A26E00F29576 /* AppDelegate.swift in Sources */,
-				176C34152133351000F29576 /* VehicleCategory.swift in Sources */,
+				1769C4C6213DB9A300B43B88 /* ApiAccess.swift in Sources */,
+				1769C4BD213DB72F00B43B88 /* UIViewExtensions.swift in Sources */,
+				176C34152133351000F29576 /* VehicleCategoryProvider.swift in Sources */,
 				176C341721334AF600F29576 /* AddListDataProvider.swift in Sources */,
 				176C33F121330DAE00F29576 /* ConfigurableAdd.swift in Sources */,
 				176205F5213C857100E8A728 /* CityInfoDataProvider.swift in Sources */,
+				1769C4C8213DC09100B43B88 /* Reachability.swift in Sources */,
 				173D1465213AC515004E72D0 /* ErrorDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

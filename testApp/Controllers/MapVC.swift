@@ -73,37 +73,4 @@ class MapVC: UIViewController {
     }
 }
 
-extension MapVC : CLLocationManagerDelegate {
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        guard let location = locations.last else { return }
-//        let region = MKCoordinateRegion.init(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: spanVar, longitudeDelta: spanVar))
-//        mapView.setRegion(region, animated: true)
-//    }
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        checkLocationAuthorization()
-    }
-}
-extension MapVC : MKMapViewDelegate {
-    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-        let center = getCenterLocation(for: mapView)
-        let geoCoder = CLGeocoder()
-        geoCoder.reverseGeocodeLocation(center ) { [weak self] (placemarks, error) in
-//            guard  self = self else { return }
-            if self == nil {return}
-            if let _ = error {
-                print("fail on map")
-                return
-            }
-//            guard let placemark = placemarks?.first else { print("mark fails");return }
-        }
-    }
-}
 
-extension UIView {
-    func pinToEdges(view: UIView) {
-        self.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        self.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        self.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        self.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-    }
-}

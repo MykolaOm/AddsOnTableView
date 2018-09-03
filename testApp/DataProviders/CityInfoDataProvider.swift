@@ -10,7 +10,7 @@ import Foundation
 
 class CityInfoDataProvider {
     var city : City?
-    let geoApiKey = "z08sxTeQAddYWAMRAMFHkwsFv2cepIEl"
+    let geoApiKey = ApiAccess.Key.geo
     func requestAutoId(cityName : String) {
         let categiesUrl = URL(string: "http://open.mapquestapi.com/geocoding/v1/address?key=\(geoApiKey)&location=\(cityName)")
         URLSession.shared.dataTask(with: categiesUrl!) { (data, response, err) in
@@ -21,7 +21,7 @@ class CityInfoDataProvider {
             } catch let jsonErr {
                 print("Error serializing json:", jsonErr)
             }
-            }.resume()
+        }.resume()
     }
     
 }

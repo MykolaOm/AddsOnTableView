@@ -9,8 +9,9 @@
 import UIKit
 
 class AddTableVC: UITableViewController, AddListDataProviderDelegate, ErrorDelegate{
-    func showError() {
+    func showError(type: httpError) {
         errorCell = true
+        errMessage = type
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -26,14 +27,13 @@ class AddTableVC: UITableViewController, AddListDataProviderDelegate, ErrorDeleg
         refresh.endRefreshing()
     }
     var errorCell = false
-    
+    var errMessage : httpError?
     func didFinish(_ sender: AddListDataProvider){
         getData()
     }
     var numberOfSections = 0
     var addListDataProvider : AddListDataProvider?
     var category = 1
-    var apiKey : String?
     var categoryName: String?
     var addsData = [AddData]() {
         didSet {
@@ -56,7 +56,7 @@ class AddTableVC: UITableViewController, AddListDataProviderDelegate, ErrorDeleg
         addListDataProvider = AddListDataProvider()
         addListDataProvider?.delegate = self
         addListDataProvider?.errorDelegate = self
-        addListDataProvider?.readJsonFromRequest(apiKey: self.apiKey!, categoryId: self.category)
+        addListDataProvider?.readJsonFromRequest(apiKey: ApiAccess.Key.auto, categoryId: self.category)
         tableView.allowsSelection = false
         self.tableView.separatorStyle = .none
     }
@@ -102,7 +102,7 @@ class AddTableVC: UITableViewController, AddListDataProviderDelegate, ErrorDeleg
     }
 
     func requestAutoId(autoId : Int) {
-        let categiesUrl = URL(string: "https://developers.ria.com/auto/info?api_key=\(self.apiKey!)&auto_id=\(autoId)")
+        let categiesUrl = URL(string: "https://developers.ria.com/auto/info?api_key=\(ApiAccess.Key.auto)&auto_id=\(autoId)")
         URLSession.shared.dataTask(with: categiesUrl!) { (data, response, err) in
             guard let data = data else { return }
             do {

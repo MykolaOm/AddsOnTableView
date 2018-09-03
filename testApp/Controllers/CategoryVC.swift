@@ -8,20 +8,13 @@
 
 import UIKit
 
-class CategoryVC: UIViewController, CategoryDownloaderDelegate {
+class CategoryVC: UIViewController {
     
-    func didFinishDownloading(_ sender: VehicleCategoryProvider) {
-        DispatchQueue.main.async {
-            self.buttonFactory(amount: self.vcp.vehicleCategories )
-            self.actView?.removeFromSuperview()
-        }
-    }
     let addListDataProvider = AddListDataProvider()
     let vcp = VehicleCategoryProvider()
-    let apiKey = "irANvvm417wSVw1hpjkeJ0mIzerpuCCvymjGVayg"
     var actView : UIActivityIndicatorView?
-
     var stv : UIStackView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title  = "Выбор категории"
@@ -30,10 +23,18 @@ class CategoryVC: UIViewController, CategoryDownloaderDelegate {
         actView?.color = .red
         self.view.addSubview(actView!)
         actView?.startAnimating()
-        vcp.getData(apiKey: apiKey)
+        updData()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        if !ReachabilityTest.isConnectedToNetwork() {
+           showAlert(message: "No internet connection")
+        }
+    }
+    private func updData(){
+        vcp.getData(apiKey: ApiAccess.Key.auto)
         setButtonStack()
     }
-    func buttonFactory(amount : [VehicleCategory] ) {
+    private func buttonFactory(amount : [VehicleCategory] ) {
         for i in 0..<amount.count {
             let button = UIButton()
             button.setTitle(amount[i].name, for: .normal)
@@ -46,7 +47,6 @@ class CategoryVC: UIViewController, CategoryDownloaderDelegate {
     @objc private func buttonAction(sender: UIButton!) {
           let vc = AddTableVC()
           vc.category = sender.tag
-          vc.apiKey  = self.apiKey
           vc.errorCell = false
           vc.categoryName = self.vcp.vehicleCategories[sender.tag-1].name
           self.navigationController?.pushViewController(vc, animated: true)
@@ -63,5 +63,19 @@ class CategoryVC: UIViewController, CategoryDownloaderDelegate {
         stv?.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         stv?.widthAnchor.constraint(equalToConstant: anc).isActive = true
         stv?.heightAnchor.constraint(equalToConstant: anc).isActive = true
+    }
+    private func showAlert(message: String){
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "ok", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+}
+
+extension CategoryVC : CategoryDownloaderDelegate {
+    func didFinishDownloading(_ sender: VehicleCategoryProvider) {
+        DispatchQueue.main.async {
+            self.buttonFactory(amount: self.vcp.vehicleCategories )
+            self.actView?.removeFromSuperview()
+        }
     }
 }

@@ -45,7 +45,7 @@ class AddListDataProvider {
                 }
             } else {
                 print ("bad responce! code: ",responceCode)
-                self.errorDelegate?.showError()
+                self.errorDelegate?.showError(type: httpError.limitOveral)
             }
         }.resume()
         
